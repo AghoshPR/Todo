@@ -14,17 +14,19 @@ export default function TodoItem({item,todos,setTodos}){
     }
     const className = item.done ? styles.completed:""
     return (
-        <div>
-            <h3>
-            <span className={className} onClick={()=>handleClick(item.name)}>{item.name}</span>
+        
 
-            <span>
-                <button onClick={()=>handleDelete(item)}>X</button>
-                
-            </span>
-            
-            </h3>
-           
+
+        <div className={styles.item}>
+
+                <div className={styles.itemName}>
+                        <span className={className} onClick={()=>handleClick(item.name)}>{item.name}</span>
+
+                        <span className={styles.completed}>
+                            <button className={styles.deleteButton} onClick={()=>handleDelete(item)}>X</button>
+                        </span>
+                        <hr />
+                </div>
         </div>
         
     )

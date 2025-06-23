@@ -1,9 +1,35 @@
+.parentclass{
+    display: flex;
+}
+
+
 .todoform{
     background-color: white;
     border-radius: 8px;
     padding: 20px;
     width: 500px;
     margin: 0 auto;
-    margin-top: 50px;
-    box-shadow: 0;
+    margin-top: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.input{
+    display: block;
+    width: 100%;
+    border: none;
+    color: black;
+    font-size: 18px;
+}
+
+.input:focus{
+    outline:none
+}
+.button{
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    background-color: green;
+    padding: 12px;
+    color: white;
+    cursor: pointer;
 }
