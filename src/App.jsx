@@ -12,11 +12,7 @@ function App() {
       <div className="App">
         <Header/>
         <Todo/>
-        
-
-      </div>
-      
-      
+      </div>   
     </>
   )
 }

@@ -4,11 +4,22 @@ export default function Form({todos,setTodos}){
 
 
     const [todo,setTodo]=useState({name:"",done:false})
+    const [error, setError] = useState("");
 
     function handleSubmit(e){
+
+        
         e.preventDefault();
+
+         if (todo.name.trim() === "") {
+            setError("Task can't be empty!");
+            return;
+        }
+
+
         setTodos([...todos,todo])
         setTodo({name:"",done:false})
+        setError("");
         console.log("The list of tasks: " , todos)
     }
 
@@ -29,6 +40,7 @@ export default function Form({todos,setTodos}){
 
             </div>            
 
+            {error && <p className={styles.error}>{error}</p>}
 
 
         </form>
