@@ -1,7 +1,7 @@
 import {useState} from "react"
 import styles from "./form.module.css"
-export default function Form({todos,setTodos}){
 
+export default function Form({todos,setTodos}){
 
     const [todo,setTodo]=useState({name:"",done:false})
     const [error, setError] = useState("");
@@ -16,6 +16,18 @@ export default function Form({todos,setTodos}){
             return;
         }
 
+        if(todo.name.includes(todo)){
+            setError("Task already exist")
+            return
+
+        }
+
+        const isDuplicate = todos.some((item)=>item.name.toLowerCase() === todo.name.trim().toLowerCase() );
+
+        if(isDuplicate){
+            setError("Task Already Exists!")
+            return
+        }
 
         setTodos([...todos,todo])
         setTodo({name:"",done:false})

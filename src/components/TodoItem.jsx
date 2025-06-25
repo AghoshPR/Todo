@@ -4,7 +4,7 @@ export default function TodoItem({item,todos,setTodos}){
 
     const [isEditing,setIsEditing] = useState(false)
     const [editedText, setEditedText] = useState(item.name)
-     const [error, setError] = useState("");
+    const [error, setError] = useState("");
 
 
     function handleDelete(item){
@@ -49,11 +49,12 @@ export default function TodoItem({item,todos,setTodos}){
 
                {isEditing ?(
 
-                     <>
+                <>
+
                     <input type="text"
-                    className={styles.input}
-                     value={editedText} 
-                    onChange={(e)=>setEditedText(e.target.value)} 
+                        className={styles.input}
+                        value={editedText} 
+                        onChange={(e)=>setEditedText(e.target.value)} 
                     
                     
                     />
